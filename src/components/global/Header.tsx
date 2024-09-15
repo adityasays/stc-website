@@ -6,18 +6,14 @@ import { useState } from "react";
 import { IconType } from "react-icons";
 import {
   FaBarsStaggered,
-  FaFaceSmileBeam,
-  FaHouse,
-  FaNewspaper,
   FaTrophy,
   FaUser,
-  FaUserGroup,
+  FaUserGroup
 } from "react-icons/fa6";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import { MdLocalPostOffice } from "react-icons/md";
 import Logo from "./Logo";
-import { IoMdLogIn } from "react-icons/io";
 
 const NavItem = ({
   to,
@@ -56,7 +52,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`font-inter fixed top-0 z-50 h-16 w-full select-none text-white ${isDropdownOpen ? "bg-black" : "bg-black/70 backdrop-blur-lg"}`}
+        className={`font-inter fixed top-0 z-50 h-16 w-full select-none text-white ${isDropdownOpen ? "bg-black" : "bg-black/60 backdrop-blur-lg"}`}
       >
         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between">
           <Logo />
@@ -69,7 +65,7 @@ export default function Header() {
               onClick={toggleDropdown}
             >
               {isDropdownOpen ? (
-                <IoClose className="size-7" />
+                <IoClose className="size-6" />
               ) : (
                 <FaBarsStaggered className="size-6" />
               )}

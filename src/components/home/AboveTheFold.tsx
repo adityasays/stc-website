@@ -1,7 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import { FaArrowRight } from "react-icons/fa6";
+import { Button } from "../ui/button";
 
 export default function AboveTheFold() {
   const words = ["create", "develop", "innovate", "learn"];
@@ -43,10 +44,13 @@ export default function AboveTheFold() {
           </p>
         </div>
         <Button
+          asChild
           className="rounded-full bg-yellow-300 text-black hover:bg-yellow-500"
           size={"default"}
         >
-          Join Now <FaArrowRight className="ml-2" />
+          <Link href={"/join"}>
+            Join Now <FaArrowRight className="ml-2" />
+          </Link>
         </Button>
       </div>
     </section>
