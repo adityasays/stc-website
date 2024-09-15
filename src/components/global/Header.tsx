@@ -10,12 +10,14 @@ import {
   FaHouse,
   FaNewspaper,
   FaTrophy,
+  FaUser,
   FaUserGroup,
 } from "react-icons/fa6";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import { MdLocalPostOffice } from "react-icons/md";
 import Logo from "./Logo";
+import { IoMdLogIn } from "react-icons/io";
 
 const NavItem = ({
   to,
@@ -58,17 +60,22 @@ export default function Header() {
       >
         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between">
           <Logo />
-          <div
-            className="cursor-pointer p-4 sm:hidden"
-            onClick={toggleDropdown}
-          >
-            {isDropdownOpen ? (
-              <IoClose className="size-7" />
-            ) : (
-              <FaBarsStaggered className="size-6" />
-            )}
+          <div className="flex gap-3 items-center justify-end sm:hidden">
+            <div>
+              <FaUser className="size-5"/>
+            </div>
+            <div
+              className="cursor-pointer p-4 sm:hidden"
+              onClick={toggleDropdown}
+            >
+              {isDropdownOpen ? (
+                <IoClose className="size-7" />
+              ) : (
+                <FaBarsStaggered className="size-6" />
+              )}
+            </div>
           </div>
-          <nav className="hidden sm:flex">
+          <nav className="hidden sm:flex sm:items-center">
             <ul className="flex">
               <NavItem
                 to="/events"
@@ -87,6 +94,9 @@ export default function Header() {
                 Contact
               </NavItem>
             </ul>
+            <div className="hover: flex items-center justify-center rounded-md border-2 border-transparent py-2 hover:border-neutral-700 hover:bg-neutral-950 cursor-pointer">
+              <FaUser className="size-4 mx-3 "/>
+            </div>
           </nav>
         </div>
       </header>
