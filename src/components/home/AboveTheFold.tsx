@@ -29,6 +29,7 @@ export default function AboveTheFold() {
     x.style.width = x.children[0]?.getBoundingClientRect().width + "px";
   }, [currentWord]);
 
+  // TODO - remove css classes and add tailwind classes here
   return (
     <section>
       <div className="flex min-h-96 w-full select-none flex-col items-center justify-center gap-y-4 text-5xl font-medium sm:text-6xl md:min-h-[420px] md:gap-y-2 lg:text-7xl">
