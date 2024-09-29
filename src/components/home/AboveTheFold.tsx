@@ -15,15 +15,19 @@ export default function AboveTheFold() {
       setTimeout(() => {
         setCurrentWord((prevWord) => {
           const currentIndex = words.indexOf(prevWord as string);
-          const nextIndex = (currentIndex + 1) % words.length;
-          return words[nextIndex];
+          return words[(currentIndex + 1) % words.length];
         });
         setFade(true);
-      }, 500);
+      }, 300);
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const x = document.querySelector("#ctp") as HTMLElement;
+    x.style.width = x.children[0]?.getBoundingClientRect().width + "px";
+  }, [currentWord]);
 
   return (
     <section>
@@ -31,15 +35,31 @@ export default function AboveTheFold() {
         <p className="text-sm text-neutral-500 sm:text-lg">
           SMVDU Tech Community
         </p>
-        <div className="w-fit pb-3 text-center ease-in-out">
-          <p>together,</p>
-          <p className="flex items-center justify-center">
-            <span>we can</span>
+        <div className="w-fit pb-3 text-center ease-in-out flex items-center justify-center">
+          <p>together, <br />
+            we can
             <span
-              className={`ml-3 text-yellow-300 transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
-              style={{ display: "inline-block", textAlign: "center" }}
-            >
-              {currentWord}
+              id="ctp"
+              className={`ml-3 text-yellow-300`}
+              style={{
+                display: "inline-block",
+                position: "relative",
+                textAlign: "center",
+                transition: "all 200ms cubic-bezier(0.2, 0.0, 0, 1.0)",
+                visibility: "hidden"
+              }}
+            > {words[0]}
+              <span
+                style={{
+                  display: "block",
+                  position: "absolute",
+                  translate: "0 -100%",
+                  visibility: "visible"
+                }}
+                className={`transition-all duration-200 delay-100 ${fade ? "opacity-100" : "opacity-0"}`}
+              >
+                {currentWord}
+              </span>
             </span>
           </p>
         </div>
