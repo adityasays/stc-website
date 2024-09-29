@@ -10,7 +10,7 @@ export default function Footer() {
       <section className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <Logo width={120} height={120} className="mb-4" /> {/* Change logo size here */}
+            <Logo width={120} height={120} className="mb-4" /> 
             <p className='py-3'>
               At SMVDU Tech Community, we are dedicated to fostering an environment
               where technology enthusiasts can connect, collaborate, and innovate.
