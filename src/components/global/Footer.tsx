@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '../ui/button';
-import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'; 
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -10,15 +10,17 @@ export default function Footer() {
       <section className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <Logo width={120} height={120} className="mb-4" /> 
+            <Logo width={120} height={120} className="mb-4" />
             <p className='py-3'>
               At SMVDU Tech Community, we are dedicated to fostering an environment
               where technology enthusiasts can connect, collaborate, and innovate.
             </p>
             <div className='py-3'>
-              <Button className='bg-black hover:bg-gray-700 transition duration-300'>
-                More about us
-              </Button>
+              <Link href="/about" passHref>
+                <Button className='bg-black hover:bg-gray-700 transition duration-300'>
+                  More about us
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -58,7 +60,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-t border-gray-700" /> 
+        <hr className="my-6 border-t border-gray-700" />
         <div className="mt-6 text-center">
           <p className="text-sm">
             © {new Date().getFullYear()} SMVDU Tech Community. All rights reserved.
